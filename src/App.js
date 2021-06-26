@@ -45,17 +45,20 @@ function App() {
             </div>
             
              {(typeof weather.main != 'undefined') ? (
-                <Fragment>
+               
                 <div className='weather-main'>
-                <CloudIcon />
-                <div className='weather-wr'>
-             <h1>{Math.round(weather.main.temp)}°c</h1>
-             <h1>Min temp: {Math.round(weather.main.temp_min)}</h1>
-             <h1>Max temp: {Math.round(weather.main.temp_max)}</h1>
-             <h1>Feels Like: {Math.round(weather.main.feels_like)}</h1>
-             </div>
-             </div>
-                </Fragment>
+                   <div className="title"> 
+                    <p> City: {weather.name}</p>
+                    <p> Country: {weather.sys.country}</p>
+                   </div> 
+                   <div className="temp-now"> {Math.round(weather.main.temp)}°c </div>
+                   <div className="another-temp">
+                        <div className="min">Min: {weather.main.temp_min}°c</div>
+                        <div className="max">Max: {weather.main.temp_max}°c</div>
+                        <div className="feels">Feels:{weather.main.feels_like}°c</div>
+                   </div>
+                </div>
+                
         ) : ('')}
         {(weather.cod === "404") ? (
                  <Error />
