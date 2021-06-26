@@ -28,15 +28,15 @@ function App() {
     }
 
     const format_date = (d) => {
-        let months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
-        let days = ['Вc', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+        let months = ['Jan', ' Feb', 'March', 'April', 'May ', 'June', 'July', ' August', 'September', 'October', 'November', ' December'];
+        let days = ['Sunday', 'Monday', 'Thursday', 'Wednesday', 'Thursday', ' Friday', 'Saturday '];;
     
         let day = days[d.getDay()];
         let date = d.getDate();
         let month = months[d.getMonth()];
-        let year = d.getFullYear();
+        
     
-        return `${day} ${date} ${month} ${year}`
+        return `${day} ${date} ${month} `
       }
 
     return (

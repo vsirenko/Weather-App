@@ -5,11 +5,22 @@
     .wr {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
     }
     .title {
         font-size: 20px;
     }
     .temp {
         font-size: 40px;
+        margin-left: 10px;
+    }
+    .date {
+        margin-left: 20px;
+    }
+    .left {
+        
+        display: flex;
+        align-items: center;
     }
 }
