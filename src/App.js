@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import './style/global.scss'
 
 import SearchIcon from './assets/SearchIcon.js'
+import FakeWeather from './components/FakeWeather/FakeWeather'
 
 import Error from './components/Error'
 import CloudIcon from './assets/CloudIcon';
@@ -26,7 +27,17 @@ function App() {
         }
     }
 
-
+    const format_date = (d) => {
+        let months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+        let days = ['Вc', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+    
+        let day = days[d.getDay()];
+        let date = d.getDate();
+        let month = months[d.getMonth()];
+        let year = d.getFullYear();
+    
+        return `${day} ${date} ${month} ${year}`
+      }
 
     return (
         <Fragment>
@@ -43,7 +54,7 @@ function App() {
                 />
                 <SearchIcon />
             </div>
-            
+            <FakeWeather date={format_date}/>
              {(typeof weather.main != 'undefined') ? (
                
                 <div className='weather-main'>
@@ -52,10 +63,14 @@ function App() {
                     <p> Country: {weather.sys.country}</p>
                    </div> 
                    <div className="temp-now"> {Math.round(weather.main.temp)}°c </div>
+                
                    <div className="another-temp">
+                   {/* <div className="date">{format_date(new Date())}</div> */}
+                        <div className="wr">
                         <div className="min">Min: {weather.main.temp_min}°c</div>
                         <div className="max">Max: {weather.main.temp_max}°c</div>
                         <div className="feels">Feels:{weather.main.feels_like}°c</div>
+                        </div>
                    </div>
                 </div>
                 
