@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap');
+
 .fakeWeather {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    font-family: 'Work Sans', sans-serif;
     .wr {
         display: flex;
         justify-content: space-between;
@@ -10,6 +13,7 @@
     }
     .title {
         font-size: 20px;
+        font-weight: 500;
     }
     .temp {
         font-size: 40px;
@@ -22,5 +26,15 @@
         
         display: flex;
         align-items: center;
+    }
+    .sky {
+        font-weight: 500;
+    }
+    .feel-like {
+        display: flex;
+       p {
+           font-weight: 500;
+           margin-right: 5px;
+       }
     }
 }

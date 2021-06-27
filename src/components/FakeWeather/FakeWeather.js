@@ -1,8 +1,9 @@
 import React, {Fragment} from 'react'
 import   './FakeWeather.scss'
+import CurentWeatherIcon from '../../elements/CurentWeatherIcon'
+
 
 import PlaceIcon from '../../assets/PlaceIcon'
-import CloudIcon from '../../assets/CloudIcon'
 
 function FakeWeather({ date }) {
 
@@ -20,7 +21,8 @@ function FakeWeather({ date }) {
     }, [])
     const [weather, setWeather] = React.useState({})
 
-  
+    
+
     return (
         
         <div className='fakeWeather'>
@@ -36,7 +38,10 @@ function FakeWeather({ date }) {
            {(typeof weather.main != 'undefined') ? (
                 <div className='wr' >
                 <div className='left'>
-                    <CloudIcon />
+
+                
+
+                <CurentWeatherIcon />
                     <div className='temp'> 
                         {Math.round(weather.main.temp)}°c
                     </div>
@@ -44,7 +49,7 @@ function FakeWeather({ date }) {
                 <div className='right'>
 
                     <div className='sky'> 
-                        {weather.weather[0].main}
+                        {weather.weather[0].description.charAt(0).toUpperCase() + weather.weather[0].description.slice(1) }
                     </div>
 
                     <div className='all-temp'>
@@ -52,7 +57,7 @@ function FakeWeather({ date }) {
                     </div>
                     
                     <div className='feel-like'>
-                        Feels like {Math.round(weather.main.feels_like)}°c
+                        <p>Feels like: </p> {Math.round(weather.main.feels_like)}°c
                     </div>
                 </div>
                 </div>

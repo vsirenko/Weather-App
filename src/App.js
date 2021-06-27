@@ -5,7 +5,7 @@ import SearchIcon from './assets/SearchIcon.js'
 import FakeWeather from './components/FakeWeather/FakeWeather'
 
 import Error from './components/Error'
-import CloudIcon from './assets/CloudIcon';
+import CurentWeatherIcon from './elements/CurentWeatherIcon'
 
 function App() {
 
@@ -54,10 +54,13 @@ function App() {
                 />
                 <SearchIcon />
             </div>
-            <FakeWeather date={format_date}/>
+
+            {(city === 'Kiev') ? (<FakeWeather date={format_date} />) : ('')}
+            
              {(typeof weather.main != 'undefined') ? (
                
                 <div className='weather-main'>
+                <CurentWeatherIcon city={city}/>
                    <div className="title"> 
                     <p> City: {weather.name}</p>
                     <p> Country: {weather.sys.country}</p>
