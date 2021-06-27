@@ -10,7 +10,7 @@ function CurentWeatherIcon({ city }) {
         .then(res => res.json())
         .then(result => {
             setWeather(result)     
-            console.log(result)
+            // console.log(result)
         })
  
    

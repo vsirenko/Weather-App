@@ -30,8 +30,9 @@ function FakeWeather({ date }) {
 
     React.useEffect(() => {
         setInterval(() => {
-            setLoader(false);
-        }, 2000);
+            setLoader(!loader);
+            console.log(loader)
+        }, 3000);
     }, [])
  
     return (
@@ -39,19 +40,21 @@ function FakeWeather({ date }) {
             <div className='loader'><img src={loaderIcon}></img></div>
         ) : 
         (
-
+            
             <div className='fakeWeather'>
-            <div><img src={loader}></img></div>
+
             <div className='title'>
             <PlaceIcon />{weather.name}
             </div>
- 
-            <div className='date'>
+           
+            
+            {(typeof weather.main != 'undefined') ? (
+                
+                <Fragment>
+                <div className='date'>
                          <p>{date(new Date())}</p>
                          <p>{time}</p>
                  </div>
-            
-            {(typeof weather.main != 'undefined') ? (
                  <div className='wr' >
                  <div className='left'>
  
@@ -77,6 +80,8 @@ function FakeWeather({ date }) {
                      </div>
                  </div>
                  </div>
+
+                 </Fragment>
              ) : ('')}
           
            
