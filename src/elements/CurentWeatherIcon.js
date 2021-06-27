@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react'
 import ClearSkyIcon from '../assets/WeatherIcon/ClearSkyIcon'
+import CloudSkyIcon from '../assets/WeatherIcon/CloudSkyIcon'
 
 function CurentWeatherIcon({ city }) {
 
@@ -23,7 +24,7 @@ const [weather, setWeather] = React.useState({})
         (typeof weather.main != 'undefined') ? (
         <Fragment>
             {(weather.weather[0].main === 'Clear') ? (  <ClearSkyIcon /> ) : ('')}
-            
+            {(weather.weather[0].main === 'Clouds') ? (  <CloudSkyIcon /> ) : ('')}
             
         </Fragment>
         ) : ('')

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap');
-
+.loader {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
 .fakeWeather {
     display: flex;
     flex-direction: column;
@@ -21,6 +25,8 @@
     }
     .date {
         margin-left: 20px;
+        display: flex;
+        justify-content: space-between;
     }
     .left {
         

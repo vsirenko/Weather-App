@@ -39,6 +39,7 @@ function App() {
         return `${day} ${date} ${month} `
       }
 
+
     return (
         <Fragment>
         <div className='main'>
@@ -59,23 +60,7 @@ function App() {
             
              {(typeof weather.main != 'undefined') ? (
                
-                <div className='weather-main'>
-                <CurentWeatherIcon city={city}/>
-                   <div className="title"> 
-                    <p> City: {weather.name}</p>
-                    <p> Country: {weather.sys.country}</p>
-                   </div> 
-                   <div className="temp-now"> {Math.round(weather.main.temp)}°c </div>
-                
-                   <div className="another-temp">
-                   {/* <div className="date">{format_date(new Date())}</div> */}
-                        <div className="wr">
-                        <div className="min">Min: {weather.main.temp_min}°c</div>
-                        <div className="max">Max: {weather.main.temp_max}°c</div>
-                        <div className="feels">Feels:{weather.main.feels_like}°c</div>
-                        </div>
-                   </div>
-                </div>
+                <div></div>
                 
         ) : ('')}
         {(weather.cod === "404") ? (
